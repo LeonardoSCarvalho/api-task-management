@@ -38,6 +38,6 @@
   },
   "dependencies": {
     "@prisma/client": "^4.8.1",
-    "joi": "^17.7.0"
+    "joi": "^17.6.2"
   }
 }
