@@ -20,4 +20,11 @@ describe("User", () => {
     expect(user.isLeft()).toBe(true)
     expect(user.value).toEqual(new InvalidParamError("email"))
   })
+  it("Should return Invalid param name if User not receive correct email", () => {
+    const { sut, memoryPayload } = makeSut()
+    memoryPayload.name = "i"
+    const user = sut.isValidName(memoryPayload.name)
+    expect(user.isLeft()).toBe(true)
+    expect(user.value).toEqual(new InvalidParamError("name"))
+  })
 })
