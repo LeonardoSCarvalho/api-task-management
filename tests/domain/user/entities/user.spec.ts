@@ -34,4 +34,11 @@ describe("User", () => {
     expect(user.isLeft()).toBe(true)
     expect(user.value).toEqual(new InvalidParamError("password"))
   })
+  it("Should return a valid user if User receive correct params", () => {
+    const { sut, memoryPayload } = makeSut()
+    const user = sut.build(memoryPayload)
+    expect(user.isRight()).toBe(true)
+    expect(user.value).toHaveProperty("id")
+    expect(user.value).toHaveProperty("createdAt")
+  })
 })
