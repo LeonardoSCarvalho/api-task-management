@@ -14,7 +14,7 @@ type SignInUserUseCaseFailled =
   | INternalServerError
   | AlreadyExistsError
 
-type SignInUserUseCaseInput = userType
-type SignInUserUseCaseOutput = Promise<
+export type SignInUserUseCaseInput = userType
+export type SignInUserUseCaseOutput = Promise<
   Either<SignInUserUseCaseFailled, { id: string }>
 >
