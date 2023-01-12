@@ -10,7 +10,7 @@ const makeSut = () => {
 }
 
 describe("SignInUserUseCase", () => {
-  it("test", async () => {
+  it("Should return the id if no error occurs", async () => {
     const { sut } = makeSut()
     const user = {
       name: "any_name",
