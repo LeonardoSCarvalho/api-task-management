@@ -13,9 +13,7 @@ export class SignInUserUseCase implements ISignInUserUseCase {
   constructor(userRepository: UserRepository) {
     this.userRepository = userRepository
   }
-  async perform(
-    input: SignInUserUseCaseInput
-  ): Promise<SignInUserUseCaseOutput> {
+  async perform(input: SignInUserUseCaseInput): SignInUserUseCaseOutput {
     const building = User.build(input)
     if (building.isLeft()) return left(building.value)
     const user = building.value
