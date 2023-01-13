@@ -1,17 +1,17 @@
 import {
   AlreadyExistsError,
-  INternalServerError,
+  InternalServerError,
   InvalidParamError,
 } from "@/domain/errors"
 import { Either } from "@/shared/either"
 import { userType } from "../dtos"
 
 export interface ISignInUserUseCase {
-  perform: (user: SignInUserUseCaseInput) => Promise<SignInUserUseCaseOutput>
+  perform: (user: SignInUserUseCaseInput) => SignInUserUseCaseOutput
 }
 type SignInUserUseCaseFailled =
   | InvalidParamError
-  | INternalServerError
+  | InternalServerError
   | AlreadyExistsError
 
 export type SignInUserUseCaseInput = userType
